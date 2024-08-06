@@ -1,5 +1,7 @@
 <?php
 
+use Modules\Index\IndexServiceProvider;
+
 return [
     App\Providers\AppServiceProvider::class,
 
@@ -8,4 +10,7 @@ return [
     Modules\User\UserServiceProvider::class,
     Modules\Dashboard\DashboardServiceProvider::class,
     Modules\Acl\AclServiceProvider::class,
+    Modules\Index\IndexServiceProvider::class,
+    Modules\Blog\BlogServiceProvider::class,
+
 ];

@@ -1,33 +1,18 @@
 <template>
+
     <Head title="Modular"></Head>
 
-    <AppSideBar
-        ref="sidebarRef"
-        :backdrop="isMobile"
-        :body-scrolling="!isMobile"
-        @sidebar:toggle="sidebarToggle"
-    >
+    <AppSideBar ref="sidebarRef" :backdrop="isMobile" :body-scrolling="!isMobile" @sidebar:toggle="sidebarToggle">
         <Link :href="route('dashboard.index')" class="mb-6 flex pl-2">
-            <img
-                src="@resources/images/logo.svg"
-                class="w-40"
-                alt="Modular Logo"
-            />
+        <img src="@resources/images/logo.svg" class="w-40" alt="Modular Logo" />
         </Link>
-
+        <!-- {{ items }} -->
         <AppMenu :items="items" />
     </AppSideBar>
 
-    <main
-        class="flex flex-1 flex-col pb-9"
-        :class="{ 'md:pl-64': isSideBarOpen }"
-    >
+    <main class="flex flex-1 flex-col pb-9" :class="{ 'md:pl-64': isSideBarOpen }">
         <AppFlashMessage />
-        <AppTopBar
-            :class="{ 'ml-64': isSideBarOpen }"
-            class="md:ml-0"
-            @sidebar:toggle="sidebarToggle"
-        />
+        <AppTopBar :class="{ 'ml-64': isSideBarOpen }" class="md:ml-0" @sidebar:toggle="sidebarToggle" />
         <div class="mx-8 2xl:mx-16">
             <transition name="fade" mode="out-in">
                 <!-- eslint-disable-next-line vue/require-toggle-inside-transition -->
@@ -71,6 +56,7 @@ const items = menu.items
 .fade-leave-active {
     @apply transition-opacity duration-300 ease-out;
 }
+
 .fade-enter-from,
 .fade-leave-to {
     @apply opacity-0;

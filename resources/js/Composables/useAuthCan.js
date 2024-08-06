@@ -4,9 +4,9 @@ export default function useAuthCan() {
     const auth = usePage().props.auth
 
     const can = (permission) => {
-        if (auth && auth.isRootUser) {
-            return true
-        }
+        // if (auth) {
+        //     return true
+        // }
 
         return auth && auth.permissions.includes(permission)
     }

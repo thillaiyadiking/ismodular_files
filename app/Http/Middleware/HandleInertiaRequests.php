@@ -39,7 +39,7 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $user,
                 'permissions' => $user ? (new ListUserPermissions)->run($user->id) : [],
-                'isRootUser' => $user ? ($user->hasRole('root') ? true : false) : false,
+                'isRootUserAdmin' => $user ? ($user->hasRole('Admin') ? true : false) : false,
             ],
             'ziggy' => fn () => array_merge((new Ziggy)->toArray(), [
                 'location' => $request->url(),

@@ -5,7 +5,7 @@ use Modules\User\Http\Controllers\UserController;
 
 Route::get('user', [
     UserController::class, 'index',
-])->name('user.index');
+])->can('Main Menu: Access Control List: Users - List')->name('user.index');
 
 Route::get('user/create', [
     UserController::class, 'create',

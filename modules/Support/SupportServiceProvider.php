@@ -2,6 +2,9 @@
 
 namespace Modules\Support;
 
+use Illuminate\Database\Eloquent\Relations\Relation;
+// use Modules\Support\BaseServiceProvider;
+
 class SupportServiceProvider extends BaseServiceProvider
 {
     /**
@@ -18,6 +21,10 @@ class SupportServiceProvider extends BaseServiceProvider
      */
     public function boot()
     {
+        // Relation::morphMap([
+        //     'user' => 'Modules\User\Models\User',
+        //     'customer' => 'Modules\Customer\Models\Customer',
+        // ]);
         include __DIR__.'/helpers.php';
         include __DIR__.'/Validators/required_editor.php';
         include __DIR__.'/Validators/recaptcha.php';

@@ -9,10 +9,16 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/js/app.js'
+                'resources/js/app.js',
+                'resources-site/js/index-app.js',
+                'resources-site/css/site.css',
+                'resources-site/js/blog-app.js'
+
             ],
             refresh: [
-                'resources/**/*'
+                'resources/**/*',
+                'resources-site/**/*',
+                'modules/**/views/**/*.blade.php'
             ]
         }),
         vue({
@@ -29,7 +35,8 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@resources': '/resources'
+            '@resources': '/resources',
+            '@resourcesSite': '/resources-site'
         }
     }
 })
